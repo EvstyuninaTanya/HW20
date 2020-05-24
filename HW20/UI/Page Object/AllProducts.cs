@@ -1,4 +1,5 @@
-﻿using OpenQA.Selenium;
+﻿using HW20.Business_object;
+using OpenQA.Selenium;
 using OpenQA.Selenium.Interactions;
 using System;
 using System.Collections.Generic;
@@ -15,10 +16,10 @@ namespace HW20
         }
 
 
-        public GotoPage ClickOnNorthWind(string nw)
+        public GotoMyProduct ClickOnNorthWind(Headers nw)
         {
-            new Actions(driver).Click(driver.FindElement(By.XPath($"(//a[contains(text(), \"{nw}\")])[2]"))).Build().Perform();
-            return new GotoPage(driver);
+            new Actions(driver).Click(driver.FindElement(By.XPath($"(//a[contains(text(), \"{nw.allproducts}\")])[2]"))).Build().Perform();
+            return new GotoMyProduct(driver);
         }
     }
 }

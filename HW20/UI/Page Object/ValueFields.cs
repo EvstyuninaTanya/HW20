@@ -3,26 +3,27 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using NUnit.Framework;
+using HW20.Business_object;
+using HW20.Tests;
 
 namespace HW20
 {
-    class ValueFields: Const
+    class ValueFields: BaseTest
     {
-        private IWebDriver driver;
         private const string head = "h2";
         public ValueFields(IWebDriver driver)
         {
             this.driver = driver;
         }
         private IWebElement header => driver.FindElement(By.CssSelector(head));
-        private IWebElement prNameId => driver.FindElement(By.Id(prodactNameId));
-        private IWebElement catId => driver.FindElement(By.Id(categoryId));
-        private IWebElement supId => driver.FindElement(By.Id(supplierId));
-        private IWebElement priceId => driver.FindElement(By.Id(unitPriceId));
-        private IWebElement quantityId => driver.FindElement(By.Id(quantityPerUnitId));
-        private IWebElement stockId => driver.FindElement(By.Id(unitsInStockId));
-        private IWebElement orderId => driver.FindElement(By.Id(unitsOnOrderId));
-        private IWebElement lvlId => driver.FindElement(By.Id(reorderLvlId));
+        private IWebElement prNameId => driver.FindElement(By.Id(rosemary.productNameId));
+        private IWebElement catId => driver.FindElement(By.Id(rosemary.categoryId));
+        private IWebElement supId => driver.FindElement(By.Id(rosemary.supplierId));
+        private IWebElement priceId => driver.FindElement(By.Id(rosemary.unitPriceId));
+        private IWebElement quantityId => driver.FindElement(By.Id(rosemary.quantityPerUnitId));
+        private IWebElement stockId => driver.FindElement(By.Id(rosemary.unitsInStockId));
+        private IWebElement orderId => driver.FindElement(By.Id(rosemary.unitsOnOrderId));
+        private IWebElement lvlId => driver.FindElement(By.Id(rosemary.reorderLvlId));
 
         public string GetHeader()
         {

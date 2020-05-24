@@ -1,4 +1,5 @@
-﻿using OpenQA.Selenium;
+﻿using HW20.Business_object;
+using OpenQA.Selenium;
 using OpenQA.Selenium.Interactions;
 using System;
 using System.Collections.Generic;
@@ -17,14 +18,14 @@ namespace HW20
         private IWebElement searchPassword => driver.FindElement(By.Id("Password"));
         private IWebElement searchButton => driver.FindElement(By.CssSelector(".btn"));
 
-        public AllProducts SetLogin(string login)
+        public AllProducts SetLogin(AvtorizateData login)
         {
-            new Actions(driver).Click(searchLogName).SendKeys(login).Build().Perform();
+            new Actions(driver).Click(searchLogName).SendKeys(login.SetLogin).Build().Perform();
             return new AllProducts(driver);
         }
-        public AllProducts SetPassword(string password)
+        public AllProducts SetPassword(AvtorizateData password)
         {
-            new Actions(driver).Click(searchPassword).SendKeys(password).Build().Perform();
+            new Actions(driver).Click(searchPassword).SendKeys(password.SetPassword).Build().Perform();
             new Actions(driver).SendKeys(Keys.Enter).Build().Perform();
             return new AllProducts(driver);
         }
