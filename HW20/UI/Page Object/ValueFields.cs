@@ -8,9 +8,13 @@ using HW20.Tests;
 
 namespace HW20
 {
-    class ValueFields: BaseTest
+    class ValueFields
     {
+        private IWebDriver driver;
+        public Product rosemary = new Product("ProductName", "CategoryId", "SupplierId", "UnitPrice", "QuantityPerUnit", "UnitsInStock", "UnitsOnOrder", "ReorderLevel");
         private const string head = "h2";
+
+
         public ValueFields(IWebDriver driver)
         {
             this.driver = driver;

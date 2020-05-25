@@ -15,11 +15,15 @@ namespace HW20
             this.driver = driver;
         }
 
-
+        private IWebElement searchButton => driver.FindElement(By.CssSelector(".btn"));
         public GotoMyProduct ClickOnNorthWind(Headers nw)
         {
             new Actions(driver).Click(driver.FindElement(By.XPath($"(//a[contains(text(), \"{nw.allproducts}\")])[2]"))).Build().Perform();
             return new GotoMyProduct(driver);
+        }
+        public void ClickOnCreate()
+        {
+            new Actions(driver).Click(searchButton).Build().Perform();
         }
     }
 }

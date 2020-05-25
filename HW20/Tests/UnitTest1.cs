@@ -11,14 +11,16 @@ using System.Threading;
 
 namespace HW20
 {
-    public class UnitTest: BaseTest
+    class UnitTest: BaseTest
     {
-        private Login log;
         private AllProducts products;
         private Logout logout;
         private GotoMyProduct gotoMyProduct;
         private ValueFields valueFields;
         private AddField addField;
+        public Product rosemary = new Product("Rosemary", "1", "Beverages", "16", "Bigfoot Breweries","17", "17,0000", "2 boxes", "23", "40","10");
+        public Headers headers = new Headers("All Products", "Home page", "Login", "Logout");
+        public AvtorizateData avtorivateData = new AvtorizateData("user", "user");
 
         [Test]
         public void LoginTest()
@@ -31,7 +33,8 @@ namespace HW20
         public void AddProductTest()
         {
             gotoMyProduct = NorthWindService.GotoAllProducts(avtorivateData, headers, driver);
-            driver.FindElement(By.CssSelector(".btn")).Click();
+            products = new AllProducts(driver);
+            products.ClickOnCreate();
             addField = new AddField(driver);
             addField.SetPrName(rosemary);
             addField.SetCat(rosemary);

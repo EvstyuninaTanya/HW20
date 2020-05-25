@@ -25,15 +25,5 @@ namespace HW20.Tests
             driver.Close();
             driver.Quit();
         }
-        public Product rosemary = new Product("ProductName", "Rosemary",
-                                              "CategoryId", "1", "Beverages",
-                                              "SupplierId", "16", "Bigfoot Breweries",
-                                              "UnitPrice", "17", "17,0000",
-                                              "QuantityPerUnit", "2 boxes",
-                                              "UnitsInStock", "23",
-                                              "UnitsOnOrder", "40",
-                                              "ReorderLevel", "10");
-        public Headers headers = new Headers("All Products", "Home page", "Login", "Logout");
-        public AvtorizateData avtorivateData = new AvtorizateData("user", "user");
     }
 }

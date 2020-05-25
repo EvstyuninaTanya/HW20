@@ -8,8 +8,10 @@ using System.Text;
 
 namespace HW20
 {
-    class AddField: BaseTest
+    class AddField
     {
+        private IWebDriver driver;
+        public Product rosemary = new Product("ProductName", "CategoryId", "SupplierId", "UnitPrice", "QuantityPerUnit", "UnitsInStock", "UnitsOnOrder","ReorderLevel");
         public AddField(IWebDriver driver)
         {
             this.driver = driver;
