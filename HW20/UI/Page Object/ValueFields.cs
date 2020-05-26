@@ -11,7 +11,6 @@ namespace HW20
     class ValueFields
     {
         private IWebDriver driver;
-        public Product rosemary = new Product("ProductName", "CategoryId", "SupplierId", "UnitPrice", "QuantityPerUnit", "UnitsInStock", "UnitsOnOrder", "ReorderLevel");
         private const string head = "h2";
 
 
@@ -20,14 +19,14 @@ namespace HW20
             this.driver = driver;
         }
         private IWebElement header => driver.FindElement(By.CssSelector(head));
-        private IWebElement prNameId => driver.FindElement(By.Id(rosemary.productNameId));
-        private IWebElement catId => driver.FindElement(By.Id(rosemary.categoryId));
-        private IWebElement supId => driver.FindElement(By.Id(rosemary.supplierId));
-        private IWebElement priceId => driver.FindElement(By.Id(rosemary.unitPriceId));
-        private IWebElement quantityId => driver.FindElement(By.Id(rosemary.quantityPerUnitId));
-        private IWebElement stockId => driver.FindElement(By.Id(rosemary.unitsInStockId));
-        private IWebElement orderId => driver.FindElement(By.Id(rosemary.unitsOnOrderId));
-        private IWebElement lvlId => driver.FindElement(By.Id(rosemary.reorderLvlId));
+        private IWebElement productNameId => driver.FindElement(By.Id("ProductName"));
+        private IWebElement categoryId => driver.FindElement(By.Id("CategoryId"));
+        private IWebElement supplierId => driver.FindElement(By.Id("SupplierId"));
+        private IWebElement unitPriceId => driver.FindElement(By.Id("UnitPrice"));
+        private IWebElement quantityPerUnitId => driver.FindElement(By.Id("QuantityPerUnit"));
+        private IWebElement unitsInStockId => driver.FindElement(By.Id("UnitsInStock"));
+        private IWebElement unitsOnOrderId => driver.FindElement(By.Id("UnitsOnOrder"));
+        private IWebElement reorderlevelId => driver.FindElement(By.Id("ReorderLevel"));
 
         public string GetHeader()
         {
@@ -35,35 +34,35 @@ namespace HW20
         }
         public string GetPrNameId()
         {
-            return prNameId.GetAttribute("value");
+            return productNameId.GetAttribute("value");
         }
         public string GetCatId()
         {
-            return catId.GetAttribute("value");
+            return categoryId.GetAttribute("value");
         }
         public string GetSupID()
         {
-            return supId.GetAttribute("value");
+            return supplierId.GetAttribute("value");
         }
         public string GetPriceId()
         {
-            return priceId.GetAttribute("value");
+            return unitPriceId.GetAttribute("value");
         }
         public string GetQuantityId()
         {
-            return quantityId.GetAttribute("value");
+            return quantityPerUnitId.GetAttribute("value");
         }
         public string GetStockId()
         {
-            return stockId.GetAttribute("value");
+            return unitsInStockId.GetAttribute("value");
         }
         public string GetOrderId()
         {
-            return orderId.GetAttribute("value");
+            return unitsOnOrderId.GetAttribute("value");
         }
         public string GetLvlId()
         {
-            return lvlId.GetAttribute("value");
+            return reorderlevelId.GetAttribute("value");
         }
     }
 }

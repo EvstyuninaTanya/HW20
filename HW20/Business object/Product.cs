@@ -31,24 +31,5 @@ namespace HW20.Business_object
             this.unitsOnOrder = unitsOnOrder;
             this.reorderLvl = reorderLvl;
         }
-        public string productNameId { get; set; }
-        public string categoryId { get; set; }
-        public string supplierId { get; set; }
-        public string unitPriceId { get; set; }
-        public string quantityPerUnitId { get; set; }
-        public string unitsInStockId { get; set; }
-        public string unitsOnOrderId { get; set; }
-        public string reorderLvlId { get; set; }
-        public Product(string prodactNameId, string categoryId, string supplierId, string unitPriceId, string quantityPerUnitId, string unitsInStockId, string unitsOnOrderId, string reorderLvlId)
-        {
-            this.productNameId = prodactNameId;
-            this.categoryId = categoryId;
-            this.supplierId = supplierId;
-            this.unitPriceId = unitPriceId;
-            this.quantityPerUnitId = quantityPerUnitId;
-            this.unitsInStockId = unitsInStockId;
-            this.unitsOnOrderId = unitsOnOrderId;;
-            this.reorderLvlId = reorderLvlId;
-        }
     }
 }
