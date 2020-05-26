@@ -16,8 +16,7 @@ namespace HW20
         private AllProducts products;
         private Logout logout;
         private GotoMyProduct gotoMyProduct;
-        private ValueFields valueFields;
-        private AddField addField;
+        private AddAndViewProduct addAndViewProduct;
         public Product rosemary = new Product("Rosemary", "1", "Beverages", "16", "Bigfoot Breweries","17", "17,0000", "2 boxes", "23", "40","10");
         public Headers headers = new Headers("All Products", "Home page", "Login", "Logout");
         public AvtorizateData avtorivateData = new AvtorizateData("user", "user");
@@ -26,8 +25,8 @@ namespace HW20
         public void LoginTest()
         {
             products = NorthWindService.GotoHomePage(avtorivateData, driver);
-            valueFields = new ValueFields(driver);
-            NUnit.Framework.Assert.AreEqual(headers.HeaderHP, valueFields.GetHeader());
+            addAndViewProduct = new AddAndViewProduct(driver);
+            NUnit.Framework.Assert.AreEqual(headers.HeaderHP, addAndViewProduct.GetHeader());
         }
         [Test]
         public void AddProductTest()
@@ -35,17 +34,17 @@ namespace HW20
             gotoMyProduct = NorthWindService.GotoAllProducts(avtorivateData, headers, driver);
             products = new AllProducts(driver);
             products.ClickOnCreate();
-            addField = new AddField(driver);
-            addField.SetPrName(rosemary);
-            addField.SetCat(rosemary);
-            addField.SetSup(rosemary);
-            addField.SetPrice(rosemary);
-            addField.SetQuantity(rosemary);
-            addField.SetStock(rosemary);
-            addField.SetOrder(rosemary);
-            addField.SetLvl(rosemary);
-            valueFields = new ValueFields(driver);
-            NUnit.Framework.Assert.AreEqual(headers.allproducts, valueFields.GetHeader());
+            addAndViewProduct = new AddAndViewProduct(driver);
+            addAndViewProduct.SetPrName(rosemary);
+            addAndViewProduct.SetCat(rosemary);
+            addAndViewProduct.SetSup(rosemary);
+            addAndViewProduct.SetPrice(rosemary);
+            addAndViewProduct.SetQuantity(rosemary);
+            addAndViewProduct.SetStock(rosemary);
+            addAndViewProduct.SetOrder(rosemary);
+            addAndViewProduct.SetLvl(rosemary);
+            addAndViewProduct = new AddAndViewProduct(driver);
+            NUnit.Framework.Assert.AreEqual(headers.allproducts, addAndViewProduct.GetHeader());
         }
 
         [Test]
@@ -53,15 +52,15 @@ namespace HW20
         {
             gotoMyProduct = NorthWindService.GotoAllProducts(avtorivateData, headers, driver);
             gotoMyProduct.ClickOnNorthWind3(rosemary);
-            valueFields = new ValueFields(driver);
-            NUnit.Framework.Assert.AreEqual(rosemary.productName, valueFields.GetPrNameId());
-            NUnit.Framework.Assert.AreEqual(rosemary.category, valueFields.GetCatId());
-            NUnit.Framework.Assert.AreEqual(rosemary.supplier, valueFields.GetSupID());
-            NUnit.Framework.Assert.AreEqual(rosemary.searchUnitPrice, valueFields.GetPriceId());
-            NUnit.Framework.Assert.AreEqual(rosemary.quantityPerUnit, valueFields.GetQuantityId());
-            NUnit.Framework.Assert.AreEqual(rosemary.unitsInStock, valueFields.GetStockId());
-            NUnit.Framework.Assert.AreEqual(rosemary.unitsOnOrder, valueFields.GetOrderId());
-            NUnit.Framework.Assert.AreEqual(rosemary.reorderLvl, valueFields.GetLvlId());
+            addAndViewProduct = new AddAndViewProduct(driver);
+            NUnit.Framework.Assert.AreEqual(rosemary.productName, addAndViewProduct.GetPrNameId());
+            NUnit.Framework.Assert.AreEqual(rosemary.category, addAndViewProduct.GetCatId());
+            NUnit.Framework.Assert.AreEqual(rosemary.supplier, addAndViewProduct.GetSupID());
+            NUnit.Framework.Assert.AreEqual(rosemary.searchUnitPrice, addAndViewProduct.GetPriceId());
+            NUnit.Framework.Assert.AreEqual(rosemary.quantityPerUnit, addAndViewProduct.GetQuantityId());
+            NUnit.Framework.Assert.AreEqual(rosemary.unitsInStock, addAndViewProduct.GetStockId());
+            NUnit.Framework.Assert.AreEqual(rosemary.unitsOnOrder, addAndViewProduct.GetOrderId());
+            NUnit.Framework.Assert.AreEqual(rosemary.reorderLvl, addAndViewProduct.GetLvlId());
         }
 
         [Test]
@@ -70,8 +69,8 @@ namespace HW20
             products = NorthWindService.GotoHomePage(avtorivateData, driver);
             logout = new Logout(driver);
             logout.ClickOnNorthWind2(headers);
-            valueFields = new ValueFields(driver);
-            NUnit.Framework.Assert.AreEqual(headers.HeaderLogin, valueFields.GetHeader());
+            addAndViewProduct = new AddAndViewProduct(driver);
+            NUnit.Framework.Assert.AreEqual(headers.HeaderLogin, addAndViewProduct.GetHeader());
         }
     }
 }

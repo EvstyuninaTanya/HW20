@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30011.22
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HW20", "HW20\HW20.csproj", "{D1682DAE-22F6-44B4-954E-0EA3B0D937E4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HW20", "HW20\HW20.csproj", "{D1682DAE-22F6-44B4-954E-0EA3B0D937E4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NUnitTestProject1", "..\..\ДЗ22_TDD_BDD_SpecFlow\NUnitTestProject1\NUnitTestProject1.csproj", "{68343E23-CF5D-4A63-AF9B-00A150471563}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{D1682DAE-22F6-44B4-954E-0EA3B0D937E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D1682DAE-22F6-44B4-954E-0EA3B0D937E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D1682DAE-22F6-44B4-954E-0EA3B0D937E4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{68343E23-CF5D-4A63-AF9B-00A150471563}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{68343E23-CF5D-4A63-AF9B-00A150471563}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{68343E23-CF5D-4A63-AF9B-00A150471563}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{68343E23-CF5D-4A63-AF9B-00A150471563}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

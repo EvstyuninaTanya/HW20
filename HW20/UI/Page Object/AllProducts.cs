@@ -21,9 +21,10 @@ namespace HW20
             new Actions(driver).Click(driver.FindElement(By.XPath($"(//a[contains(text(), \"{nw.allproducts}\")])[2]"))).Build().Perform();
             return new GotoMyProduct(driver);
         }
-        public void ClickOnCreate()
+        public AddAndViewProduct ClickOnCreate()
         {
             new Actions(driver).Click(searchButton).Build().Perform();
+            return new AddAndViewProduct(driver);
         }
     }
 }
